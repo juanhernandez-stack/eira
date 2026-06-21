@@ -182,12 +182,17 @@ img { display: block; max-width: 100%; }
 .nav-mobile a { display: block; padding: 13px 0; font-size: 16px; color: var(--ash); border-bottom: 1px solid var(--hairline-soft); }
 
 @media (max-width: 880px) {
+  .nav-in { gap: 14px; }
   .nav-links .nav-link { display: none; }
   .nav-tools .specswitch { display: none; }
   .nav-tools .btn-plum { display: none; }
+  .nav-tools { flex-shrink: 0; }
+  .brand { min-width: 0; flex-shrink: 1; }
+  .brand-lock { min-width: 0; overflow: hidden; }
+  .brand-word { white-space: nowrap; }
   .burger { display: flex; }
 }
-@media (max-width: 420px) {
+@media (max-width: 600px) {
   .brand-tag { display: none; }
 }
 
@@ -611,7 +616,7 @@ html:not(.js) .reveal{opacity:1 !important;transform:none !important;}
   <div class="contact-grid">
     <div class="contact-info">
       <div><div class="ci-k" data-en="Location">Ubicación</div><div class="ci-loc">Montes de Oca<br><span>San José, Costa Rica</span></div></div>
-      <div><div class="ci-k" data-en="Direct contacts">Contactos directos</div><div class="people"><div class="person"><div class="pname">Juan Diego Hernández</div><div class="prole" data-en="Product Development">Desarrollo de Producto</div><a href="/cdn-cgi/l/email-protection#dbb1aebab5f5b3bea9b5bab5bfbea19bbeb2a9bab6bebff5b8b4b6"><span class="__cf_email__" data-cfemail="6c06190d024204091e020d020809162c09051e0d010908420f0301">[email&#160;protected]</span></a></div><div class="person"><div class="pname">David Rodríguez</div><div class="prole" data-en="Business Development">Desarrollo de Negocios</div><a href="/cdn-cgi/l/email-protection#7d191c0b1419530f12190f141a0818073d18140f1c101819531e1210"><span class="__cf_email__" data-cfemail="157174637c713b677a71677c7260706f55707c67747870713b767a78">[email&#160;protected]</span></a></div><div class="person"><div class="pname">Verónica Córdoba</div><div class="prole" data-en="Quality Assurance">Calidad y Regulatorio</div></div></div></div>
+      <div><div class="ci-k" data-en="Direct contacts">Contactos directos</div><div class="people"><div class="person"><div class="pname">Juan Diego Hernández</div><div class="prole" data-en="Product Development">Desarrollo de Producto</div><a href="/cdn-cgi/l/email-protection#375d425659195f524559565953524d77525e45565a52531954585a"><span class="__cf_email__" data-cfemail="670d120609490f021509060903021d27020e15060a02034904080a">[email&#160;protected]</span></a></div><div class="person"><div class="pname">David Rodríguez</div><div class="prole" data-en="Business Development">Desarrollo de Negocios</div><a href="/cdn-cgi/l/email-protection#1d797c6b7479336f72796f747a6878675d78746f7c707879337e7270"><span class="__cf_email__" data-cfemail="7a1e1b0c131e5408151e08131d0f1f003a1f13081b171f1e54191517">[email&#160;protected]</span></a></div><div class="person"><div class="pname">Verónica Córdoba</div><div class="prole" data-en="Quality Assurance">Calidad y Regulatorio</div></div></div></div>
     </div>
     <form class="form" id="form">
       <div class="field"><label data-en="I am a…">Soy…</label><div class="spec-pick">
