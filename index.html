@@ -616,7 +616,7 @@ html:not(.js) .reveal{opacity:1 !important;transform:none !important;}
   <div class="contact-grid">
     <div class="contact-info">
       <div><div class="ci-k" data-en="Location">Ubicación</div><div class="ci-loc">Montes de Oca<br><span>San José, Costa Rica</span></div></div>
-      <div><div class="ci-k" data-en="Direct contacts">Contactos directos</div><div class="people"><div class="person"><div class="pname">Juan Diego Hernández</div><div class="prole" data-en="Product Development">Desarrollo de Producto</div><a href="/cdn-cgi/l/email-protection#375d425659195f524559565953524d77525e45565a52531954585a"><span class="__cf_email__" data-cfemail="670d120609490f021509060903021d27020e15060a02034904080a">[email&#160;protected]</span></a></div><div class="person"><div class="pname">David Rodríguez</div><div class="prole" data-en="Business Development">Desarrollo de Negocios</div><a href="/cdn-cgi/l/email-protection#1d797c6b7479336f72796f747a6878675d78746f7c707879337e7270"><span class="__cf_email__" data-cfemail="7a1e1b0c131e5408151e08131d0f1f003a1f13081b171f1e54191517">[email&#160;protected]</span></a></div><div class="person"><div class="pname">Verónica Córdoba</div><div class="prole" data-en="Quality Assurance">Calidad y Regulatorio</div></div></div></div>
+      <div><div class="ci-k" data-en="Direct contacts">Contactos directos</div><div class="people"><div class="person"><div class="pname">Juan Diego Hernández</div><div class="prole" data-en="Product Development">Desarrollo de Producto</div><a class="pmail" data-u="juan.hernandez" data-d="eiramed.com"></a></div><div class="person"><div class="pname">David Rodríguez</div><div class="prole" data-en="Business Development">Desarrollo de Negocios</div><a class="pmail" data-u="david.rodriguez" data-d="eiramed.com"></a></div><div class="person"><div class="pname">Verónica Córdoba</div><div class="prole" data-en="Quality Assurance">Calidad y Regulatorio</div></div></div></div>
     </div>
     <form class="form" id="form">
       <div class="field"><label data-en="I am a…">Soy…</label><div class="spec-pick">
@@ -639,7 +639,7 @@ html:not(.js) .reveal{opacity:1 !important;transform:none !important;}
   <div class="disc" data-en="Product under development. Not commercially available. Clinical claims are subject to obtaining the corresponding health registry.">Producto en desarrollo. No disponible comercialmente. Las afirmaciones clínicas están sujetas a la obtención del registro sanitario correspondiente.</div>
   <div class="rights" data-en="© 2026 EIRA Medical. All rights reserved.">© 2026 EIRA Medical. Todos los derechos reservados.</div>
 </div></footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
   var de=document.documentElement; de.className='js';
   function setLang(l){
@@ -671,6 +671,12 @@ html:not(.js) .reveal{opacity:1 !important;transform:none !important;}
   var saved=null; try{ saved=localStorage.getItem('eira-lang'); }catch(e){}
   var nv=(navigator.language||'es').slice(0,2).toLowerCase();
   setLang((saved==='en'||saved==='es') ? saved : (nv==='en'?'en':'es'));
+  // Assemble email links client-side so no CDN/anti-spam filter obfuscates them ("[email protected]")
+  document.querySelectorAll('.pmail').forEach(function(a){
+    var e=a.getAttribute('data-u')+String.fromCharCode(64)+a.getAttribute('data-d');
+    a.setAttribute('href','mailto:'+e);
+    a.textContent=e;
+  });
 })();</script>
 <script>
 (function(){
